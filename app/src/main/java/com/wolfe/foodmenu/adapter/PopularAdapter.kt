@@ -25,8 +25,8 @@ class PopularAdapter(private val context: Context, private val popularList: List
         lateinit var popularName: TextView
 
         init {
-            popularName = itemView.findViewById(R.id.all_menu_name)
-            popularImage = itemView.findViewById(R.id.all_menu_image)
+            popularName = itemView.findViewById(R.id.popular_menu_name)
+            popularImage = itemView.findViewById(R.id.popular_menu_image)
         }
     }
 
@@ -45,6 +45,7 @@ class PopularAdapter(private val context: Context, private val popularList: List
             i.putExtra("price", popularList[position].price)
             i.putExtra("rating", popularList[position].rating)
             i.putExtra("image", popularList[position].imageUrl)
+            i.putExtra("note", popularList[position].note)
             context.startActivity(i)
         }
     }

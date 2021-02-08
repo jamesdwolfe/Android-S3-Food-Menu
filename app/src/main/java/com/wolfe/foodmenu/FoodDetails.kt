@@ -15,6 +15,7 @@ class FoodDetails : AppCompatActivity() {
         price.text = '$' + intent.getStringExtra("price")!!
         rating.text = intent.getStringExtra("rating")
         ratingBar.rating = intent.getStringExtra("rating")!!.toFloat()
+        description.text = intent.getStringExtra("note")
 
         backButton.setOnClickListener { onBackPressed() }
 

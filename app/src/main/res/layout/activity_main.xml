@@ -8,7 +8,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@android:color/white">
 
     <TextView
         android:id="@+id/textView"
@@ -34,7 +35,8 @@
         android:textColor="#333333"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:layout_marginLeft="16dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/popular_recycler"
@@ -57,7 +59,8 @@
         android:textColor="#333333"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/popular_recycler" />
+        app:layout_constraintTop_toBottomOf="@+id/popular_recycler"
+        android:layout_marginLeft="16dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recommended_recycler"
@@ -79,7 +82,8 @@
         android:textColor="#333333"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recommended_recycler" />
+        app:layout_constraintTop_toBottomOf="@+id/recommended_recycler"
+        android:layout_marginLeft="16dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/all_menu_recycler"
@@ -91,6 +95,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.91"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/logo_round"
+        android:background="@android:color/transparent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

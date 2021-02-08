@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
     private var retrofit: Retrofit? = null
-    private const val BASE_URL = "https://androidappsforyoutube.s3.ap-south-1.amazonaws.com/foodapp/"
+    private const val BASE_URL = "https://androidappapi.s3-us-west-1.amazonaws.com/FoodOrderApi/"
 
     val retrofitInstance: Retrofit?
         get() {

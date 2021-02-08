@@ -23,7 +23,6 @@ class AllMenuAdapter(private var context: Context, private var allmMenuList: Lis
 
     class AllMenuViewHolder(itemView: View) : ViewHolder(itemView) {
         lateinit var allMenuName : TextView
-        lateinit var allMenuNote : TextView
         lateinit var allMenuCharges : TextView
         lateinit var allMenuRating : TextView
         lateinit var allMenuTime : TextView
@@ -32,7 +31,6 @@ class AllMenuAdapter(private var context: Context, private var allmMenuList: Lis
 
         init {
             allMenuName= itemView.findViewById(R.id.all_menu_name)
-            allMenuNote = itemView.findViewById(R.id.all_menu_note)
             allMenuCharges = itemView.findViewById(R.id.all_menu_delivery_charge)
             allMenuRating = itemView.findViewById(R.id.all_menu_rating)
             allMenuTime = itemView.findViewById(R.id.all_menu_deliverytime)
@@ -52,7 +50,6 @@ class AllMenuAdapter(private var context: Context, private var allmMenuList: Lis
         holder.allMenuTime.text = allmMenuList[position].deliveryTime
         holder.allMenuRating.text = allmMenuList[position].rating
         holder.allMenuCharges.text = allmMenuList[position].deliveryCharges
-        holder.allMenuNote.text = allmMenuList[position].note
         Glide.with(context).load(allmMenuList[position].imageUrl).into(holder.allMenuImage)
 
         holder.itemView.setOnClickListener {
@@ -61,6 +58,7 @@ class AllMenuAdapter(private var context: Context, private var allmMenuList: Lis
             i.putExtra("price", allmMenuList[position].price)
             i.putExtra("rating", allmMenuList[position].rating)
             i.putExtra("image", allmMenuList[position].imageUrl)
+            i.putExtra("note", allmMenuList[position].note)
             context.startActivity(i)
         }
     }

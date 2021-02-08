@@ -5,6 +5,6 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface ApiInterface {
-    @get:GET("fooddata.json")
+    @get:GET("menudata.json")
     val allData: Call<List<FoodData>>
 }

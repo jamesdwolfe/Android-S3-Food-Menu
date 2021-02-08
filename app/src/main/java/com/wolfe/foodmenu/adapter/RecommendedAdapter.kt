@@ -58,6 +58,7 @@ class RecommendedAdapter(private val context: Context, private val recommendedLi
             i.putExtra("price", recommendedList[position].price)
             i.putExtra("rating", recommendedList[position].rating)
             i.putExtra("image", recommendedList[position].imageUrl)
+            i.putExtra("note", recommendedList[position].note)
             context.startActivity(i)
         }
     }
