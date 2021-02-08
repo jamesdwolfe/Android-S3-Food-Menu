@@ -10,8 +10,8 @@ import com.wolfe.foodmenu.adapter.PopularAdapter
 import com.wolfe.foodmenu.adapter.RecommendedAdapter
 import com.wolfe.foodmenu.data.AllMenuItem
 import com.wolfe.foodmenu.data.FoodData
-import com.wolfe.foodmenu.data.Popular
-import com.wolfe.foodmenu.data.Recommended
+import com.wolfe.foodmenu.data.PopularItem
+import com.wolfe.foodmenu.data.RecommendedItem
 import com.wolfe.foodmenu.retrofit.ApiInterface
 import com.wolfe.foodmenu.retrofit.RetrofitClient
 import retrofit2.Call
@@ -40,16 +40,16 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun getPopularData(popularList: List<Popular>) {
-        val popularAdapter = PopularAdapter(this, popularList)
+    private fun getPopularData(popularItemList: List<PopularItem>) {
+        val popularAdapter = PopularAdapter(this, popularItemList)
         val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         popular_recycler.layoutManager = layoutManager
         popular_recycler.adapter = popularAdapter
         popularAdapter.notifyDataSetChanged()
     }
 
-    private fun getRecommendedData(recommendedList: List<Recommended>) {
-        val recommendedAdapter = RecommendedAdapter(this, recommendedList)
+    private fun getRecommendedData(recommendedItemList: List<RecommendedItem>) {
+        val recommendedAdapter = RecommendedAdapter(this, recommendedItemList)
         val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         recommended_recycler.layoutManager = layoutManager
         recommended_recycler.adapter = recommendedAdapter

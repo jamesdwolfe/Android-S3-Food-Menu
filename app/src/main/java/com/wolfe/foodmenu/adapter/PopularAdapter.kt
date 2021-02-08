@@ -13,11 +13,11 @@ import com.bumptech.glide.Glide
 import com.wolfe.foodmenu.FoodDetails
 import com.wolfe.foodmenu.R
 import com.wolfe.foodmenu.adapter.PopularAdapter.PopularViewHolder
-import com.wolfe.foodmenu.data.Popular
+import com.wolfe.foodmenu.data.PopularItem
 
-class PopularAdapter(private val context: Context, private val popularList: List<Popular>) : RecyclerView.Adapter<PopularViewHolder>() {
+class PopularAdapter(private val context: Context, private val popularItemList: List<PopularItem>) : RecyclerView.Adapter<PopularViewHolder>() {
     override fun getItemCount(): Int {
-        return popularList.size
+        return popularItemList.size
     }
 
     class PopularViewHolder(itemView: View) : ViewHolder(itemView) {
@@ -36,16 +36,16 @@ class PopularAdapter(private val context: Context, private val popularList: List
     }
 
     override fun onBindViewHolder(holder: PopularViewHolder, position: Int) {
-        holder.popularName.text = popularList[position].name
-        Glide.with(context).load(popularList[position].imageUrl).into(holder.popularImage)
+        holder.popularName.text = popularItemList[position].name
+        Glide.with(context).load(popularItemList[position].imageUrl).into(holder.popularImage)
 
         holder.itemView.setOnClickListener {
             val i = Intent(context, FoodDetails::class.java)
-            i.putExtra("name", popularList[position].name)
-            i.putExtra("price", popularList[position].price)
-            i.putExtra("rating", popularList[position].rating)
-            i.putExtra("image", popularList[position].imageUrl)
-            i.putExtra("note", popularList[position].note)
+            i.putExtra("name", popularItemList[position].name)
+            i.putExtra("price", popularItemList[position].price)
+            i.putExtra("rating", popularItemList[position].rating)
+            i.putExtra("image", popularItemList[position].imageUrl)
+            i.putExtra("note", popularItemList[position].note)
             context.startActivity(i)
         }
     }

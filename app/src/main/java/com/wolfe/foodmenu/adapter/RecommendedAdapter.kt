@@ -13,11 +13,11 @@ import com.bumptech.glide.Glide
 import com.wolfe.foodmenu.FoodDetails
 import com.wolfe.foodmenu.R
 import com.wolfe.foodmenu.adapter.RecommendedAdapter.RecommendedViewHolder
-import com.wolfe.foodmenu.data.Recommended
+import com.wolfe.foodmenu.data.RecommendedItem
 
-class RecommendedAdapter(private val context: Context, private val recommendedList: List<Recommended>) : RecyclerView.Adapter<RecommendedViewHolder>() {
+class RecommendedAdapter(private val context: Context, private val recommendedItemList: List<RecommendedItem>) : RecyclerView.Adapter<RecommendedViewHolder>() {
     override fun getItemCount(): Int {
-        return recommendedList.size
+        return recommendedItemList.size
     }
 
     class RecommendedViewHolder(itemView: View) : ViewHolder(itemView) {
@@ -45,20 +45,20 @@ class RecommendedAdapter(private val context: Context, private val recommendedLi
     }
 
     override fun onBindViewHolder(holder: RecommendedViewHolder, position: Int) {
-        holder.recommendedName.text = recommendedList[position].name
-        holder.recommendedRating.text = recommendedList[position].rating
-        holder.recommendedCharges.text = recommendedList[position].deliveryCharges
-        holder.recommendedDeliveryTime.text = recommendedList[position].deliveryTime
-        holder.recommendedPrice.text = "$" + recommendedList[position].price
-        Glide.with(context).load(recommendedList[position].imageUrl).into(holder.recommendedImage)
+        holder.recommendedName.text = recommendedItemList[position].name
+        holder.recommendedRating.text = recommendedItemList[position].rating
+        holder.recommendedCharges.text = recommendedItemList[position].deliveryCharges
+        holder.recommendedDeliveryTime.text = recommendedItemList[position].deliveryTime
+        holder.recommendedPrice.text = "$" + recommendedItemList[position].price
+        Glide.with(context).load(recommendedItemList[position].imageUrl).into(holder.recommendedImage)
 
         holder.itemView.setOnClickListener {
             val i = Intent(context, FoodDetails::class.java)
-            i.putExtra("name", recommendedList[position].name)
-            i.putExtra("price", recommendedList[position].price)
-            i.putExtra("rating", recommendedList[position].rating)
-            i.putExtra("image", recommendedList[position].imageUrl)
-            i.putExtra("note", recommendedList[position].note)
+            i.putExtra("name", recommendedItemList[position].name)
+            i.putExtra("price", recommendedItemList[position].price)
+            i.putExtra("rating", recommendedItemList[position].rating)
+            i.putExtra("image", recommendedItemList[position].imageUrl)
+            i.putExtra("note", recommendedItemList[position].note)
             context.startActivity(i)
         }
     }

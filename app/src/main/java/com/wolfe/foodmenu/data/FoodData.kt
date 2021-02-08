@@ -6,11 +6,11 @@ import com.google.gson.annotations.SerializedName
 class FoodData {
     @SerializedName("popular")
     @Expose
-    var popular: List<Popular> = emptyList()
+    var popular: List<PopularItem> = emptyList()
 
     @SerializedName("recommended")
     @Expose
-    var recommended: List<Recommended> = emptyList()
+    var recommended: List<RecommendedItem> = emptyList()
 
     @SerializedName("allmenu")
     @Expose
